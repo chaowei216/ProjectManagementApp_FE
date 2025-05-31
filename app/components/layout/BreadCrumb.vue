@@ -8,11 +8,11 @@ const items: BreadcrumbItem[] = [
   },
   {
     label: "Components",
-    to: "/components",
+    to: "/",
   },
   {
     label: "Breadcrumb",
-    to: "/components/breadcrumb",
+    to: "/",
   },
 ];
 </script>

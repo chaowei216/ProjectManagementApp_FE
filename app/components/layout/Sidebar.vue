@@ -136,11 +136,6 @@ const mainItems = ref<SidebarItem[]>([
     icon: "i-lucide-home",
     to: "/workspace",
   },
-  {
-    label: "Team",
-    icon: "i-lucide-users",
-    to: "/team",
-  },
 ]);
 
 const recentItems = ref<SidebarItem[]>([
