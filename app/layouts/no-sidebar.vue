@@ -3,15 +3,8 @@
 <template>
   <div class="flex flex-col min-h-dvh">
     <div class="flex-1 flex">
-      <div>
-        <slot name="sidebar">
-          <Sidebar :navigation-links="[]" />
-        </slot>
-      </div>
       <div class="flex-1 flex flex-col">
-        <slot name="header">
-          <Header />
-        </slot>
+        <Header />
 
         <div class="flex-1 flex">
           <slot />
@@ -19,6 +12,6 @@
       </div>
     </div>
 
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>

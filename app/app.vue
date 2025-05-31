@@ -1,8 +1,20 @@
 <template>
   <UApp>
-    <NuxtLayout>
+    <NuxtLayout default-layout="default">
       <NuxtLoadingIndicator />
       <NuxtPage />
     </NuxtLayout>
   </UApp>
 </template>
+
+<script setup>
+useHead({
+  title: " Project Management App",
+  meta: [
+    {
+      name: "description",
+      content: "Project Management App",
+    },
+  ],
+});
+</script>

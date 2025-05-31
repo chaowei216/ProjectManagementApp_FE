@@ -4,6 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  routeRules: {
+    "/projects/**": { appMiddleware: ["auth"] },
+    "/tasks/**": { appMiddleware: ["auth"] },
+  },
   modules: ["@nuxt/ui", "@pinia/nuxt"],
   css: ["~/assets/css/main.css"],
   vite: {
@@ -13,9 +17,25 @@ export default defineNuxtConfig({
     prefix: "U",
     theme: {
       transitions: false,
+      colors: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "info",
+        "success",
+        "warning",
+        "error",
+      ],
     },
   },
   pinia: {
     storesDirs: ["./stores/**"],
   },
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+      global: true,
+    },
+  ],
 });
