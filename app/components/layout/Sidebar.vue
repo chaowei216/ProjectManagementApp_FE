@@ -85,6 +85,84 @@
               </li>
             </template>
           </UCollapsible>
+
+          <UCollapsible :unmount-on-hide="false">
+            <li>
+              <UButton
+                variant="ghost"
+                class="w-full text-xs text-muted-foreground flex items-center justify-between"
+              >
+                <span class="line-clamp-1 overflow-ellipsis text-left">
+                  {{ sideBarStatus === "mini" ? "" : "Workspace A" }}
+                </span>
+                <UIcon name="i-lucide-chevron-down" class="size-5" />
+              </UButton>
+            </li>
+
+            <template #content>
+              <li v-for="link in recentItems" :key="link.to">
+                <NuxtLink
+                  :to="
+                    link.subItems?.length && link.subItems.length > 0
+                      ? '#'
+                      : link.to
+                  "
+                  class="text-gray-500"
+                  active-class="text-blue-normal-active"
+                >
+                  <UButton
+                    :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
+                    :icon="link.icon"
+                    variant="ghost"
+                    class="w-full "
+                  >
+                    <span class="line-clamp-1 overflow-ellipsis text-left">
+                      {{ sideBarStatus === "mini" ? "" : link.label }}
+                    </span>
+                  </UButton>
+                </NuxtLink>
+              </li>
+            </template>
+          </UCollapsible>
+
+          <UCollapsible :unmount-on-hide="false">
+            <li>
+              <UButton
+                variant="ghost"
+                class="w-full text-xs text-muted-foreground flex items-center justify-between"
+              >
+                <span class="line-clamp-1 overflow-ellipsis text-left">
+                  {{ sideBarStatus === "mini" ? "" : "Workspace B" }}
+                </span>
+                <UIcon name="i-lucide-chevron-down" class="size-5" />
+              </UButton>
+            </li>
+
+            <template #content>
+              <li v-for="link in recentItems" :key="link.to">
+                <NuxtLink
+                  :to="
+                    link.subItems?.length && link.subItems.length > 0
+                      ? '#'
+                      : link.to
+                  "
+                  class="text-gray-500"
+                  active-class="text-blue-normal-active"
+                >
+                  <UButton
+                    :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
+                    :icon="link.icon"
+                    variant="ghost"
+                    class="w-full "
+                  >
+                    <span class="line-clamp-1 overflow-ellipsis text-left">
+                      {{ sideBarStatus === "mini" ? "" : link.label }}
+                    </span>
+                  </UButton>
+                </NuxtLink>
+              </li>
+            </template>
+          </UCollapsible>
         </ul>
       </nav>
     </div>

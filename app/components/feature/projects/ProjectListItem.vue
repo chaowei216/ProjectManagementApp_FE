@@ -7,7 +7,13 @@
           alt="Project"
           class="size-12 rounded-sm"
         />
-        <h3 class="text-sm">{{ project.name }}</h3>
+        <div>
+          <h3 class="text-sm ">{{ project.name }}</h3>
+          <p class="text-xs text-gray-500">
+            Lorem, ipsum dolor sit amet consectetur 
+            odio.
+          </p>
+        </div>
       </div>
     </UCard>
   </NuxtLink>

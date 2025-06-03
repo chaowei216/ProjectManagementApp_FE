@@ -1,8 +1,8 @@
 <template>
-  <div class="p-4 w-full">
+  <div class="w-full">
     <div class="-mt-2 relative">
       <div class="absolute top-0 right-0 z-10">
-        <TableViewAction />
+        <ProjectDetailAction />
       </div>
       <ProjectTabs />
     </div>

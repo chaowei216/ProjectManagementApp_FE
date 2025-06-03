@@ -10,7 +10,7 @@
     <template #sidebar>
       <Sidebar :navigation-links="KANBAN_SIDEBAR_LINKS" />
     </template>
-    <div class="p-4">
+    <div>
       <div class="flex gap-4">
         <div class="grid grid-cols-4 gap-4">
           <KanbanCardItem :kanban="kanban" />

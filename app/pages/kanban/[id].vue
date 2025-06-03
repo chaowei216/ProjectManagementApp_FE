@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4">
+  <div>
     <h1>Kanban {{ id }}</h1>
   </div>
 </template>

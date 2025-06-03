@@ -13,7 +13,7 @@
           <Header />
         </slot>
 
-        <div class="flex-1 flex">
+        <div class="flex-1 flex p-4">
           <slot />
         </div>
       </div>
