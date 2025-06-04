@@ -12,7 +12,7 @@
     </template>
     <div class="flex-1 space-y-6">
       <div class="flex gap-4 justify-between items-baseline">
-        <h1 class="text-xl font-bold">Workspace</h1>
+        <Heading title="Workspace" size="lg" />
         <div class="flex gap-4">
           <UButton>
             <Icon name="lucide:plus" class="w-4 h-4" />
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div>
-        <h3 class="font-medium mb-3 mt-4">Workspace </h3>
+        <Heading title="Workspace của Cảnh" class="mb-2" />
         <div class="flex gap-4">
           <div class="flex-1 grid grid-cols-3 gap-3 pl-2">
             <ProjectListItem :project="{ id: '1', name: 'Project Demo' }" />
@@ -32,7 +32,7 @@
       </div>
 
       <div>
-        <h3 class="font-medium mb-3 mt-4">Workspace 2</h3>
+        <Heading title="DX Workspace" class="mb-2" />
         <div class="flex gap-4">
           <div class="flex-1 grid grid-cols-3 gap-3 pl-2">
             <ProjectListItem :project="{ id: '1', name: 'Project Demo' }" />
@@ -44,7 +44,7 @@
       </div>
 
       <div>
-        <h3 class="font-medium mb-3 mt-4">Workspace 3</h3>
+        <Heading title="Dự án Triệu Đô $$$$" class="mb-2" />
         <div class="flex gap-4">
           <div class="flex-1 grid grid-cols-3 gap-3 pl-2">
             <ProjectListItem :project="{ id: '1', name: 'Project Demo' }" />

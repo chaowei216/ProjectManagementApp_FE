@@ -2,8 +2,10 @@
   <NuxtLink :to="`/projects/${project.id}`">
     <UCard :ui="{ body: 'sm:p-3' }">
       <div class="flex items-center gap-2">
-        <img
+        <NuxtImg
+
           src="https://picsum.photos/id/29/400"
+          
           alt="Project"
           class="size-12 rounded-sm"
         />

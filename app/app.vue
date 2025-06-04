@@ -16,5 +16,12 @@ useHead({
       content: "Project Management App",
     },
   ],
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/spm.png",
+    },
+  ],
 });
 </script>

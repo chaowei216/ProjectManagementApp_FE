@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     "/projects/**": { appMiddleware: ["auth"] },
     "/tasks/**": { appMiddleware: ["auth"] },
   },
-  modules: ["@nuxt/ui", "@pinia/nuxt"],
+  modules: ["@nuxt/ui", "@pinia/nuxt", "@nuxt/image"],
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
@@ -30,6 +30,9 @@ export default defineNuxtConfig({
   },
   pinia: {
     storesDirs: ["./stores/**"],
+  },
+  image: {
+    domains: ["picsum.photos"],
   },
   components: [
     {

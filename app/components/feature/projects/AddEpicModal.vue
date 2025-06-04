@@ -1,11 +1,12 @@
 <template>
   <UModal>
-    <UButton variant="outline">
-      <UIcon name="i-lucide-plus" />
-      Add Epic
-    </UButton>
+    <UButton
+      variant="ghost"
+      color="neutral"
+      label="Add Epic"
+      icon="i-lucide-plus"
+    />
 
-    
     <template #title>
       <h2 class="text-lg font-medium">Add Epic</h2>
     </template>

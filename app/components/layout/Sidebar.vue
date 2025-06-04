@@ -35,11 +35,16 @@
             <NuxtLink :to="link.to" active-class="text-blue-normal-active">
               <UButton
                 variant="ghost"
+                color="neutral"
                 class="w-full text-gray-500"
                 :icon="link.icon"
+                :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
               >
-                <span class="line-clamp-1 overflow-ellipsis text-left font-light">
-                  {{ sideBarStatus === "mini" ? "" : link.label }}
+                <span
+                  class="line-clamp-1 overflow-ellipsis text-left font-light"
+                  v-if="sideBarStatus !== 'mini'"
+                >
+                  {{ link.label }}
                 </span>
               </UButton>
             </NuxtLink>
@@ -51,10 +56,18 @@
             <li>
               <UButton
                 variant="ghost"
-                class="w-full text-xs text-muted-foreground flex items-center justify-between"
+                class="w-full text-xs text-muted-foreground flex items-center mb-1"
+                :class="
+                  sideBarStatus === 'mini'
+                    ? 'justify-center'
+                    : 'justify-between'
+                "
               >
-                <span class="line-clamp-1 overflow-ellipsis text-left">
-                  {{ sideBarStatus === "mini" ? "" : "Recent" }}
+                <span
+                  class="line-clamp-1 overflow-ellipsis text-left font-semibold"
+                  v-if="sideBarStatus !== 'mini'"
+                >
+                  Recent
                 </span>
                 <UIcon name="i-lucide-chevron-down" class="size-5" />
               </UButton>
@@ -75,10 +88,14 @@
                     :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
                     :icon="link.icon"
                     variant="ghost"
-                    class="w-full "
+                    color="neutral"
+                    class="w-full"
                   >
-                    <span class="line-clamp-1 overflow-ellipsis text-left">
-                      {{ sideBarStatus === "mini" ? "" : link.label }}
+                    <span
+                      class="line-clamp-1 overflow-ellipsis text-left"
+                      v-if="sideBarStatus !== 'mini'"
+                      >
+                      {{ link.label }}
                     </span>
                   </UButton>
                 </NuxtLink>
@@ -90,10 +107,18 @@
             <li>
               <UButton
                 variant="ghost"
-                class="w-full text-xs text-muted-foreground flex items-center justify-between"
+                class="w-full text-xs text-muted-foreground flex items-center mb-1"
+                :class="
+                  sideBarStatus === 'mini'
+                    ? 'justify-center'
+                    : 'justify-between'
+                "
               >
-                <span class="line-clamp-1 overflow-ellipsis text-left">
-                  {{ sideBarStatus === "mini" ? "" : "Workspace A" }}
+                <span
+                  class="line-clamp-1 overflow-ellipsis text-left font-semibold"
+                  v-if="sideBarStatus !== 'mini'"
+                >
+                  Workspace A
                 </span>
                 <UIcon name="i-lucide-chevron-down" class="size-5" />
               </UButton>
@@ -114,10 +139,14 @@
                     :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
                     :icon="link.icon"
                     variant="ghost"
-                    class="w-full "
+                    color="neutral"
+                    class="w-full"
                   >
-                    <span class="line-clamp-1 overflow-ellipsis text-left">
-                      {{ sideBarStatus === "mini" ? "" : link.label }}
+                    <span
+                      class="line-clamp-1 overflow-ellipsis text-left"
+                      v-if="sideBarStatus !== 'mini'"
+                    >
+                      {{ link.label }}
                     </span>
                   </UButton>
                 </NuxtLink>
@@ -129,10 +158,18 @@
             <li>
               <UButton
                 variant="ghost"
-                class="w-full text-xs text-muted-foreground flex items-center justify-between"
+                class="w-full text-xs text-muted-foreground flex items-center mb-1"
+                :class="
+                  sideBarStatus === 'mini'
+                    ? 'justify-center'
+                    : 'justify-between'
+                "
               >
-                <span class="line-clamp-1 overflow-ellipsis text-left">
-                  {{ sideBarStatus === "mini" ? "" : "Workspace B" }}
+                <span
+                  class="line-clamp-1 overflow-ellipsis text-left font-semibold"
+                  v-if="sideBarStatus !== 'mini'"
+                >
+                  Workspace B
                 </span>
                 <UIcon name="i-lucide-chevron-down" class="size-5" />
               </UButton>
@@ -153,10 +190,14 @@
                     :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
                     :icon="link.icon"
                     variant="ghost"
-                    class="w-full "
+                    color="neutral"
+                    class="w-full"
                   >
-                    <span class="line-clamp-1 overflow-ellipsis text-left">
-                      {{ sideBarStatus === "mini" ? "" : link.label }}
+                    <span
+                      class="line-clamp-1 overflow-ellipsis text-left"
+                      v-if="sideBarStatus !== 'mini'"
+                    >
+                      {{ link.label }}
                     </span>
                   </UButton>
                 </NuxtLink>
@@ -189,7 +230,18 @@
         />
       </div>
 
-      <template #content> <UCard>login</UCard> </template>
+      <template #content>
+        <div class="px-4 py-2 rounded-sm w-[200px]">
+          <UButton variant="ghost" color="neutral" class="w-full">
+            <UIcon name="i-lucide-user" />
+            Profile
+          </UButton>
+          <UButton variant="ghost" color="error" class="w-full">
+            <UIcon name="i-lucide-log-out" />
+            Logout
+          </UButton>
+        </div>
+      </template>
     </UPopover>
   </div>
 </template>

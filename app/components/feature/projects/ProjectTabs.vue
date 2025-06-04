@@ -29,8 +29,8 @@ const items = [
   <UTabs
     :items="items"
     variant="link"
-    class="gap-4 w-full"
-    :ui="{ trigger: 'justify-start text-sm pl-3 gap-2' }"
+    class="gap-4 w-full flex-1 h-full"
+    :ui="{ trigger: 'justify-start text-sm pl-3 gap-2', content: 'h-full' }"
   >
     <template #table>
       <ProjectTableView />
