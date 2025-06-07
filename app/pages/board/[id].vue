@@ -67,8 +67,6 @@
 </template>
 
 <script setup lang="ts">
-import NewBoardColumn from "~/components/feature/board/NewBoardColumn.vue";
-
 const route = useRoute();
 const id = route.params.id;
 </script>
