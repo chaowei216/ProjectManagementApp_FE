@@ -6,9 +6,9 @@ export const PROJECT_SIDEBAR_LINKS = [
   },
 
   {
-    label: "Kanban",
-    icon: "i-lucide-kanban",
-    to: "/kanban",
+    label: "Board",
+    icon: "i-lucide-board",
+    to: "/board",
   },
   {
     label: "Metrics",
@@ -20,28 +20,27 @@ export const PROJECT_SIDEBAR_LINKS = [
     icon: "i-lucide-calendar",
     to: "/calendar",
   },
-  
 ];
 
 export const KANBAN_SIDEBAR_LINKS = [
   {
-    label: "Kanban",
-    icon: "i-lucide-kanban",
-    to: "/kanban",
+    label: "Board",
+    icon: "i-lucide-board",
+    to: "/board",
   },
   {
-    label: "All Kanban",
-    icon: "i-lucide-kanban",
-    to: "/kanban",
+    label: "All Board",
+    icon: "i-lucide-board",
+    to: "/board",
   },
   {
-    label: "Kanban",
-    icon: "i-lucide-kanban",
-    to: "/kanban",
+    label: "Board",
+    icon: "i-lucide-board",
+    to: "/board",
   },
   {
-    label: "Kanban",
-    icon: "i-lucide-kanban",
-    to: "/kanban",
+    label: "Board",
+    icon: "i-lucide-board",
+    to: "/board",
   },
-]
+];

@@ -15,9 +15,9 @@
         Manage your projects and tasks
       </p>
     </UCard>
-    <UCard @click="router.push('/kanban')">
+    <UCard @click="router.push('/board')">
       <template #header>
-        <h1 class="font-bold">Kanban</h1>
+        <h1 class="font-bold">Board</h1>
       </template>
       <p>
         Manage your projects and tasks
@@ -25,8 +25,6 @@
     </UCard>
   </div>
 </template> -->
-
-
 
 <template></template>
 

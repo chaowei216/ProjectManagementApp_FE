@@ -3,7 +3,7 @@
     <template #header>
       <Header>
         <template #header-left>
-          <h1 class="text-lg font-semibold">Kanban</h1>
+          <h1 class="text-lg font-semibold">Board</h1>
         </template>
       </Header>
     </template>
@@ -13,10 +13,10 @@
     <div>
       <div class="flex gap-4">
         <div class="grid grid-cols-4 gap-4">
-          <KanbanCardItem :kanban="kanban" />
-          <KanbanCardItem :kanban="kanban" />
-          <KanbanCardItem :kanban="kanban" />
-          <KanbanCardItem :kanban="kanban" />
+          <BoardCardItem :board="board" />
+          <BoardCardItem :board="board" />
+          <BoardCardItem :board="board" />
+          <BoardCardItem :board="board" />
         </div>
       </div>
     </div>
@@ -28,8 +28,8 @@ definePageMeta({
   layout: false,
 });
 
-const kanban = {
+const board = {
   id: "1",
-  title: "Kanban 1",
+  title: "Board 1",
 };
 </script>

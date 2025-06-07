@@ -8,9 +8,9 @@ const items = [
     slot: "table" as const,
   },
   {
-    label: "Kanban",
+    label: "Board",
     icon: "i-lucide-kanban",
-    slot: "kanban" as const,
+    slot: "board" as const,
   },
   {
     label: "Metrics",
@@ -30,14 +30,17 @@ const items = [
     :items="items"
     variant="link"
     class="gap-4 w-full flex-1 h-full"
-    :ui="{ trigger: 'justify-start text-sm pl-3 gap-2', content: 'h-full' }"
+    :ui="{
+      trigger: 'justify-start text-sm pl-3 gap-2',
+      content: 'flex flex-col flex-1',
+    }"
   >
     <template #table>
       <ProjectTableView />
     </template>
 
-    <template #kanban>
-      <ProjectKanbanView />
+    <template #board>
+      <ProjectBoardView />
     </template>
 
     <template #metrics>

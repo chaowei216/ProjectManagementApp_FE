@@ -235,7 +235,7 @@ const expanded = ref({});
 </script>
 
 <template>
-  <div class="flex flex-1 items-center">
+  <div class="flex items-center">
     <Heading title="Task List" />
     <div class="flex gap-6 items-center w-1/2 ml-auto">
       <div class="flex-1 flex items-center gap-2">
@@ -249,7 +249,7 @@ const expanded = ref({});
     </div>
   </div>
   <UTable
-    class="flex-1 mt-4 h-[500px]"
+    class="flex-1 mt-4 overflow-auto max-h-[calc(100vh-224px)]"
     ref="table"
     v-model:pagination="pagination"
     sticky
@@ -336,6 +336,11 @@ const expanded = ref({});
       :items-per-page="table?.tableApi?.getState().pagination.pageSize"
       :total="table?.tableApi?.getFilteredRowModel().rows.length"
       @update:page="(p) => table?.tableApi?.setPageIndex(p - 1)"
+      variant="ghost"
+      size="sm"
+      :ui="{
+
+      }"
     />
   </div>
 </template>

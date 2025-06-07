@@ -3,7 +3,7 @@
     class="flex items-center gap-2 "
     :class="className[props.size || 'md'] + ' ' + props.class"
   >
-    <h1 >{{ props.title }}</h1>
+    <h1 :class="headingClass" >{{ props.title }}</h1>
     <p class="text-sm text-gray-500" v-if="props.description">
       {{ props.description }}
     </p>
@@ -24,5 +24,6 @@ const props = defineProps<{
   description?: string;
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
   class?: string;
+  headingClass?: string
 }>();
 </script>

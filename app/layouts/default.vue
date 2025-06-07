@@ -8,12 +8,14 @@
           <Sidebar :navigation-links="[]" />
         </slot>
       </div>
-      <div class="flex-1 flex flex-col">
-        <slot name="header">
-          <Header />
-        </slot>
+      <div class="flex-1 flex flex-col h-screen overflow-y-auto relative">
+        <div class="sticky top-0 z-20 bg-white">
+          <slot name="header">
+            <Header />
+          </slot>
+        </div>
 
-        <div class="flex-1 p-4 flex">
+        <div class="flex-1 p-4 flex flex-col">
           <slot />
         </div>
       </div>

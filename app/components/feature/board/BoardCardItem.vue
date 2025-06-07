@@ -1,14 +1,14 @@
 <template>
-  <ULink :to="`/kanban/${kanban.id}`">
+  <ULink :to="`/board/${board.id}`">
     <UCard>
-      <h2>{{ kanban.title }}</h2>
+      <h2>{{ board.title }}</h2>
     </UCard>
   </ULink>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-  kanban: {
+  board: {
     id: string;
     title: string;
     // description: string;

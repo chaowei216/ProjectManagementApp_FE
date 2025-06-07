@@ -14,7 +14,7 @@
         <UButton
           :variant="sideBarStatus === 'mini' ? 'outline' : 'ghost'"
           icon="i-lucide-panel-left"
-          class="ml-auto bg-blue-light"
+          class="ml-auto bg-blue-light relative z-30"
           @click="toggleSidebar"
         />
       </div>
@@ -32,22 +32,12 @@
             </UButton>
           </li>
           <li v-for="link in mainItems" :key="link.to">
-            <NuxtLink :to="link.to" active-class="text-blue-normal-active">
-              <UButton
-                variant="ghost"
-                color="neutral"
-                class="w-full text-gray-500"
-                :icon="link.icon"
-                :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
-              >
-                <span
-                  class="line-clamp-1 overflow-ellipsis text-left font-light"
-                  v-if="sideBarStatus !== 'mini'"
-                >
-                  {{ link.label }}
-                </span>
-              </UButton>
-            </NuxtLink>
+            <SidebarItem
+              :to="link.to"
+              :status="sideBarStatus"
+              :icon="link.icon"
+              :label="link.label"
+            />
           </li>
 
           <USeparator />
@@ -75,30 +65,12 @@
 
             <template #content>
               <li v-for="link in recentItems" :key="link.to">
-                <NuxtLink
-                  :to="
-                    link.subItems?.length && link.subItems.length > 0
-                      ? '#'
-                      : link.to
-                  "
-                  class="text-gray-500"
-                  active-class="text-blue-normal-active"
-                >
-                  <UButton
-                    :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
-                    :icon="link.icon"
-                    variant="ghost"
-                    color="neutral"
-                    class="w-full"
-                  >
-                    <span
-                      class="line-clamp-1 overflow-ellipsis text-left"
-                      v-if="sideBarStatus !== 'mini'"
-                      >
-                      {{ link.label }}
-                    </span>
-                  </UButton>
-                </NuxtLink>
+                <SidebarItem
+                  :to="link.to"
+                  :status="sideBarStatus"
+                  :icon="link.icon"
+                  :label="link.label"
+                />
               </li>
             </template>
           </UCollapsible>
@@ -126,30 +98,12 @@
 
             <template #content>
               <li v-for="link in recentItems" :key="link.to">
-                <NuxtLink
-                  :to="
-                    link.subItems?.length && link.subItems.length > 0
-                      ? '#'
-                      : link.to
-                  "
-                  class="text-gray-500"
-                  active-class="text-blue-normal-active"
-                >
-                  <UButton
-                    :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
-                    :icon="link.icon"
-                    variant="ghost"
-                    color="neutral"
-                    class="w-full"
-                  >
-                    <span
-                      class="line-clamp-1 overflow-ellipsis text-left"
-                      v-if="sideBarStatus !== 'mini'"
-                    >
-                      {{ link.label }}
-                    </span>
-                  </UButton>
-                </NuxtLink>
+                <SidebarItem
+                  :to="link.to"
+                  :status="sideBarStatus"
+                  :icon="link.icon"
+                  :label="link.label"
+                />
               </li>
             </template>
           </UCollapsible>
@@ -177,30 +131,12 @@
 
             <template #content>
               <li v-for="link in recentItems" :key="link.to">
-                <NuxtLink
-                  :to="
-                    link.subItems?.length && link.subItems.length > 0
-                      ? '#'
-                      : link.to
-                  "
-                  class="text-gray-500"
-                  active-class="text-blue-normal-active"
-                >
-                  <UButton
-                    :class="sideBarStatus === 'mini' ? 'justify-center' : ''"
-                    :icon="link.icon"
-                    variant="ghost"
-                    color="neutral"
-                    class="w-full"
-                  >
-                    <span
-                      class="line-clamp-1 overflow-ellipsis text-left"
-                      v-if="sideBarStatus !== 'mini'"
-                    >
-                      {{ link.label }}
-                    </span>
-                  </UButton>
-                </NuxtLink>
+                <SidebarItem
+                  :to="link.to"
+                  :status="sideBarStatus"
+                  :icon="link.icon"
+                  :label="link.label"
+                />
               </li>
             </template>
           </UCollapsible>
@@ -254,7 +190,6 @@ type SidebarItem = {
   label: string;
   icon: string;
   to: string;
-  subItems?: SidebarItem[];
 };
 defineProps<{
   navigationLinks?: SidebarItem[];
