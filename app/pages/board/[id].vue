@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 flex flex-col">
+  <div class="flex flex-col h-full">
     <Heading :title="`Board ${id}`" size="lg" class="mb-2" />
 
     <USeparator />

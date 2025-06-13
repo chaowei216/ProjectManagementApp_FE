@@ -1,6 +1,7 @@
 <template>
   <UModal>
     <UCard
+      variant="subtle"
       class="shadow hover:shadow-lg focus:shadow-md transition-all"
       :ui="{
         footer: '!px-4 !py-2',

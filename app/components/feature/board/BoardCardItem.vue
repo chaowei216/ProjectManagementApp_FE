@@ -1,6 +1,6 @@
 <template>
   <ULink :to="`/board/${board.id}`">
-    <UCard>
+    <UCard >
       <h2>{{ board.title }}</h2>
     </UCard>
   </ULink>

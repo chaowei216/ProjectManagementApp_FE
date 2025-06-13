@@ -1,7 +1,7 @@
 <template>
-  <li class="hover:bg-yellow-light-active transition-all rounded-sm px-2 py-1">
+  <li class="hover:bg-yellow-light-hover transition-all rounded-md px-4 py-2 ">
     <div>
-      <div class="flex justify-between items-start">
+      <div class="flex justify-between items-start mb-1">
         <p class="font-semibold">Important</p>
         <span class="">{{ new Date().toLocaleString() }}</span>
       </div>

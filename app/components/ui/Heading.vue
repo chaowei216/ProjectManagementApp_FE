@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center gap-2 "
+    class="flex items-center gap-2"
     :class="className[props.size || 'md'] + ' ' + props.class"
   >
     <h1 :class="headingClass" >{{ props.title }}</h1>

@@ -8,7 +8,6 @@
       }"
     >
       <UButton
-        variant="solid"
         label="Add"
         icon="i-lucide-plus"
         trailing-icon="i-lucide-chevron-down"

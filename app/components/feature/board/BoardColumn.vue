@@ -1,7 +1,7 @@
 <template>
   <div class="w-[320px] flex flex-col rounded-sm" :class="classname">
     <div
-      class="mb-2 border-l-3 px-4 rounded-sm ml-2 flex items-center"
+      class="mb-2 border-l-3 pl-4 rounded-sm mx-2 flex items-center"
       :style="{ borderColor: color }"
     >
       <div class="py-2 flex items-center gap-2 flex-1">

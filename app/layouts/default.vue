@@ -15,8 +15,10 @@
           </slot>
         </div>
 
-        <div class="flex-1 p-4 flex flex-col">
-          <slot />
+        <div class="bg-blue-light p-2 flex-1">
+          <div class="p-4 rounded-sm bg-white h-full shadow">
+            <slot />
+          </div>
         </div>
       </div>
     </div>

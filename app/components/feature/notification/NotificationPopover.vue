@@ -7,7 +7,7 @@
     </UButton>
 
     <template #content>
-      <div class="w-[320px] p-4 rounded-sm">
+      <div class="w-[400  px] p-4 rounded-sm">
         <div>
           <div class="flex justify-between items-center">
             <span class="text-sm font-medium">Notifications</span>

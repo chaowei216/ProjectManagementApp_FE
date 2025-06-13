@@ -31,7 +31,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <Container class="py-2 flex w-full border-b border-b-blue-light items-center">
+  <Container class="py-2 flex w-full border-b border-b-blue-light items-center shadow">
     <div class="flex items-center gap-2">
       <UButton variant="ghost" @click="navigateTo('/')">
         <UIcon name="i-lucide-arrow-left" />

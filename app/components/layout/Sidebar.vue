@@ -1,16 +1,12 @@
 <template>
   <div
     v-if="sideBarStatus !== 'hide'"
-    class="p-4 bg-blue-light flex flex-col justify-between h-full transition-all"
+    class="px-4 py-2 flex flex-col justify-between h-full transition-all"
     :class="sideBarStatus === 'mini' ? 'w-[80px]' : 'w-[200px]'"
   >
     <div>
-      <div class="flex items-center justify-between mb-8">
-        <NuxtLink to="/">
-          <div class="text-lg font-bold px-4 text-blue-normal-active">
-            {{ sideBarStatus === "mini" ? "S" : "SPM" }}
-          </div>
-        </NuxtLink>
+      <div class="flex items-center justify-between mb-12">
+        <Logo :variant="sideBarStatus === 'mini' ? 'mini' : 'normal'" />
         <UButton
           :variant="sideBarStatus === 'mini' ? 'outline' : 'ghost'"
           icon="i-lucide-panel-left"
@@ -19,128 +15,91 @@
         />
       </div>
 
-      <nav>
-        <ul class="space-y-2">
-          <li>
-            <UButton
-              variant="ghost"
-              class="w-full text-xs text-muted-foreground"
-            >
-              <span class="line-clamp-1 overflow-ellipsis text-left">
-                {{ sideBarStatus === "mini" ? "" : "Main" }}
-              </span>
-            </UButton>
-          </li>
-          <li v-for="link in mainItems" :key="link.to">
+      <nav class="space-y-2">
+        <!-- <UButton
+          variant="ghost"
+          class="w-full text-xs text-muted-foreground text-blue-normal-active font-semibold"
+          :label="sideBarStatus === 'mini' ? '' : 'Main'"
+        /> -->
+        <SidebarItem
+          v-for="link in mainItems"
+          :key="link.to"
+          :to="link.to"
+          :status="sideBarStatus"
+          :icon="link.icon"
+          :label="link.label"
+        />
+
+        <USeparator class="mt-2 mb-4 px-2" />
+
+        <UCollapsible :unmount-on-hide="false" default-open>
+          <UButton
+            variant="ghost"
+            class="w-full text-xs text-muted-foreground flex items-center mb-2"
+            :class="
+              sideBarStatus === 'mini' ? 'justify-center' : 'justify-between'
+            "
+            trailing-icon="i-lucide-chevron-down"
+            :label="sideBarStatus !== 'mini' ? 'Recent' : ''"
+          />
+
+          <template #content>
             <SidebarItem
+              v-for="link in recentItems"
+              :to="link.to"
+              :status="sideBarStatus"
+              :icon="link.icon"
+              :label="link.label"
+              :key="link.to"
+            />
+          </template>
+        </UCollapsible>
+
+        <UCollapsible :unmount-on-hide="false">
+          <UButton
+            variant="ghost"
+            class="w-full text-xs text-muted-foreground flex items-center mb-2"
+            :class="
+              sideBarStatus === 'mini' ? 'justify-center' : 'justify-between'
+            "
+            trailing-icon="i-lucide-chevron-down"
+            :label="sideBarStatus !== 'mini' ? 'Workspace A' : ''"
+          />
+
+          <template #content>
+            <SidebarItem
+              v-for="link in recentItems"
+              :key="link.to"
               :to="link.to"
               :status="sideBarStatus"
               :icon="link.icon"
               :label="link.label"
             />
-          </li>
+          </template>
+        </UCollapsible>
 
-          <USeparator />
+        <UCollapsible :unmount-on-hide="false">
+          <UButton
+            variant="ghost"
+            class="w-full text-xs text-muted-foreground flex items-center mb-2"
+            :class="
+              sideBarStatus === 'mini' ? 'justify-center' : 'justify-between'
+            "
+            trailing-icon="i-lucide-chevron-down"
+            :label="sideBarStatus !== 'mini' ? 'Dự án triệu $' : ''"
+          />
 
-          <UCollapsible :unmount-on-hide="false" default-open>
-            <li>
-              <UButton
-                variant="ghost"
-                class="w-full text-xs text-muted-foreground flex items-center mb-1"
-                :class="
-                  sideBarStatus === 'mini'
-                    ? 'justify-center'
-                    : 'justify-between'
-                "
-              >
-                <span
-                  class="line-clamp-1 overflow-ellipsis text-left font-semibold"
-                  v-if="sideBarStatus !== 'mini'"
-                >
-                  Recent
-                </span>
-                <UIcon name="i-lucide-chevron-down" class="size-5" />
-              </UButton>
-            </li>
-
-            <template #content>
-              <li v-for="link in recentItems" :key="link.to">
-                <SidebarItem
-                  :to="link.to"
-                  :status="sideBarStatus"
-                  :icon="link.icon"
-                  :label="link.label"
-                />
-              </li>
-            </template>
-          </UCollapsible>
-
-          <UCollapsible :unmount-on-hide="false">
-            <li>
-              <UButton
-                variant="ghost"
-                class="w-full text-xs text-muted-foreground flex items-center mb-1"
-                :class="
-                  sideBarStatus === 'mini'
-                    ? 'justify-center'
-                    : 'justify-between'
-                "
-              >
-                <span
-                  class="line-clamp-1 overflow-ellipsis text-left font-semibold"
-                  v-if="sideBarStatus !== 'mini'"
-                >
-                  Workspace A
-                </span>
-                <UIcon name="i-lucide-chevron-down" class="size-5" />
-              </UButton>
-            </li>
-
-            <template #content>
-              <li v-for="link in recentItems" :key="link.to">
-                <SidebarItem
-                  :to="link.to"
-                  :status="sideBarStatus"
-                  :icon="link.icon"
-                  :label="link.label"
-                />
-              </li>
-            </template>
-          </UCollapsible>
-
-          <UCollapsible :unmount-on-hide="false">
-            <li>
-              <UButton
-                variant="ghost"
-                class="w-full text-xs text-muted-foreground flex items-center mb-1"
-                :class="
-                  sideBarStatus === 'mini'
-                    ? 'justify-center'
-                    : 'justify-between'
-                "
-              >
-                <span
-                  class="line-clamp-1 overflow-ellipsis text-left font-semibold"
-                  v-if="sideBarStatus !== 'mini'"
-                >
-                  Workspace B
-                </span>
-                <UIcon name="i-lucide-chevron-down" class="size-5" />
-              </UButton>
-            </li>
-
-            <template #content>
-              <li v-for="link in recentItems" :key="link.to">
-                <SidebarItem
-                  :to="link.to"
-                  :status="sideBarStatus"
-                  :icon="link.icon"
-                  :label="link.label"
-                />
-              </li>
-            </template>
-          </UCollapsible>
-        </ul>
+          <template #content>
+            <SidebarItem
+              v-for="link in recentItems"
+              :key="link.to"
+              :to="link.to"
+              :status="sideBarStatus"
+              :icon="link.icon"
+              :label="link.label"
+            />
+          </template>
+        </UCollapsible>
       </nav>
     </div>
 
@@ -168,13 +127,22 @@
 
       <template #content>
         <div class="px-4 py-2 rounded-sm w-[200px]">
-          <UButton variant="ghost" color="neutral" class="w-full">
-            <UIcon name="i-lucide-user" />
-            Profile
+          <UButton
+            variant="ghost"
+            color="neutral"
+            class="w-full gap-3"
+            label="Profile"
+            icon="i-lucide-user"
+          >
           </UButton>
-          <UButton variant="ghost" color="error" class="w-full">
-            <UIcon name="i-lucide-log-out" />
-            Logout
+          <UButton
+            variant="ghost"
+            color="error"
+            class="w-full gap-3"
+            icon="i-lucide-log-out"
+            label="Logout"
+            @click="logout"
+          >
           </UButton>
         </div>
       </template>
@@ -224,4 +192,5 @@ const recentItems = ref<SidebarItem[]>([
 const toggleSidebar = () => {
   sideBarStatus.value = sideBarStatus.value === "mini" ? "extend" : "mini";
 };
+const {logout} = useAuthStore()
 </script>

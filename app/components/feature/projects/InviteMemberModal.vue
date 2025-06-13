@@ -1,9 +1,6 @@
 <template>
   <UModal>
-    <UButton variant="outline">
-      <UIcon name="i-lucide-user-plus" />
-      <span>Invite</span>
-    </UButton>
+    <UButton variant="subtle" color="neutral" label="Invite" icon="i-lucide-plus" />
 
     <template #title>
       <h2 class="text-lg font-medium">Invite Member</h2>

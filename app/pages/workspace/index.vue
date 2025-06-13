@@ -14,10 +14,7 @@
       <div class="flex gap-4 justify-between items-baseline">
         <Heading title="Workspace" size="lg" />
         <div class="flex gap-4">
-          <UButton>
-            <Icon name="lucide:plus" class="w-4 h-4" />
-            New Workspace
-          </UButton>
+          <UButton label="New Workspace" icon="lucide:plus"/>
         </div>
       </div>
       <div>

@@ -249,7 +249,7 @@ const expanded = ref({});
     </div>
   </div>
   <UTable
-    class="flex-1 mt-4 overflow-auto max-h-[calc(100vh-224px)]"
+    class="flex-1 mt-4 overflow-auto max-h-[calc(100vh-240px)]"
     ref="table"
     v-model:pagination="pagination"
     sticky
@@ -260,7 +260,7 @@ const expanded = ref({});
     <template #expanded="{ row }">
       <div>
         <div
-          class="flex gap-6 justify-between items-center px-4 py-2 hover:bg-blue-light-active transition-all rounded-sm"
+          class="flex gap-6 justify-between items-center px-4 py-2 hover:bg-yellow-light-hover transition-all rounded-sm"
         >
           <UIcon name="i-lucide-notebook" />
           <div class="flex gap-2 justify-between flex-1">
@@ -282,7 +282,7 @@ const expanded = ref({});
           </div>
         </div>
         <div
-          class="flex gap-6 justify-between items-center px-4 py-2 hover:bg-blue-light-active transition-all rounded-sm"
+          class="flex gap-6 justify-between items-center px-4 py-2 hover:bg-yellow-light-hover transition-all rounded-sm"
         >
           <UIcon name="i-lucide-notebook" />
           <div class="flex gap-2 justify-between flex-1">
@@ -304,7 +304,7 @@ const expanded = ref({});
           </div>
         </div>
         <div
-          class="flex gap-6 justify-between items-center px-4 py-2 hover:bg-blue-light-active transition-all rounded-sm"
+          class="flex gap-6 justify-between items-center px-4 py-2 hover:bg-yellow-light-hover transition-all rounded-sm"
         >
           <UIcon name="i-lucide-notebook" />
           <div class="flex gap-2 justify-between flex-1">

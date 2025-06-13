@@ -1,23 +1,13 @@
 <template>
-  <NuxtLink
+  <UButton
+    :class="status === 'mini' ? 'justify-center' : ''"
+    :icon="icon"
     :to="to || '#'"
-    active-class="text-blue-normal-active"
-  >
-    <UButton
-      :class="status === 'mini' ? 'justify-center' : ''"
-      :icon="icon"
-      variant="ghost"
-      color="neutral"
-      class="w-full hover:bg-yellow-light hover:text-blue-dark transition-all"
-    >
-      <span
-        class="line-clamp-1 overflow-ellipsis text-left"
-        v-if="status !== 'mini'"
-      >
-        {{ label }}
-      </span>
-    </UButton>
-  </NuxtLink>
+    variant="ghost"
+    color="neutral"
+    class="w-full hover:bg-blue-light hover:text-blue-dark transition-all gap-3"
+    :label="status !== 'mini' ? label : ''"
+  />
 </template>
 
 <script setup lang="ts">
